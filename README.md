@@ -17,7 +17,7 @@ git clone git://github.com/benellingson/groovy-webapp-template.git
 
 2) rename groovy-webapp-template directory 
 
-mv groovy-webapp-template <your-app-name>
+	mv groovy-webapp-template <your-app-name>
 
 3) change to the application directory
 
