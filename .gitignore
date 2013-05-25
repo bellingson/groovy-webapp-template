@@ -5,3 +5,5 @@
 *.war
 *.ear
 build
+.gradle
+.DS_Store
