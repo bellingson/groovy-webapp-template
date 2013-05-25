@@ -7,6 +7,8 @@ defaultTasks 'war'
 
 packageName = 'com.myapp'
 
+jettyRun.contextPath = '/' 
+
 def userName = System.getProperty('user.name')
 
 if (version == 'unspecified') {

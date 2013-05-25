@@ -37,6 +37,10 @@ $routeProvider
     templateUrl: 'views/main.html',
     controller: 'MainCtrl'
   })
+  .when('/thing/:id', {
+    templateUrl: 'views/thing.html',
+    controller: 'ThingCtrl'
+  })
   .otherwise({
     redirectTo: '/'
   });
