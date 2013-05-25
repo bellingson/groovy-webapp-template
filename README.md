@@ -9,7 +9,8 @@ Requirements
 1) install groovy
 2) install gradle
 
-Initialize your app
+Initialize Your App
+
 1) navigate to directory where you want to create the app and clone this repo
 
 git clone git://github.com/benellingson/groovy-webapp-template.git
