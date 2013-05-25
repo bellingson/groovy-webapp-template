@@ -15,11 +15,11 @@ Initialize Your App
 
 git clone git://github.com/benellingson/groovy-webapp-template.git
 
-2) rename groovy-webapp-template directory to <your-app-name>
+2) rename groovy-webapp-template directory to \<your-app-name\>
 
 3) change to the application directory
 
-	cd <your-app-name>
+	cd \<your-app-name\>
 
 4) remove existing git info, so you don't try to commit back to the template
 
