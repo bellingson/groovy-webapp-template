@@ -13,7 +13,7 @@ Initialize Your App
 
 1) navigate to directory where you want to create the app and clone this repo
 
-git clone git://github.com/benellingson/groovy-webapp-template.git
+	git clone git://github.com/benellingson/groovy-webapp-template.git
 
 2) rename groovy-webapp-template directory 
 
