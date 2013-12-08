@@ -22,10 +22,51 @@ h4 { font-size: 1.8em; margin: 0 0 10px 0; }
 #container { background: #FFF; }
 
 header {  border-bottom: 1px solid #999; }
-header a { margin: 20px 0 20px 20px; display: block; }
+header a.home { margin: 20px 0 20px 20px; display: block; float: left;  }
 
-#content { min-height: 450px; padding: 30px; }
+header div.top-links { float: right; margin: 5px 5px 0 0;}
+
+#content { min-height: 430px; padding: 30px; }
 footer { color: #FFF; text-align: center; padding: 30px;max-width: 1000px; margin: 0 auto;  }
+
+/* forms */
+
+div.message { color: #CC0000; margin: 0 0 20px 0; }
+
+form.input { display: block; }
+form.input:after { clear: both;content: ".";display: block;height: 0;width: 0;visibility: hidden;  }
+form.input div label { display: block; width: 80px; float: left; }
+form.input div input[type='text'] { display: block; float: left; }
+form.input div { margin: 0 0 10px 0; }
+form.input div:after {
+              	clear: both;
+              	content: ".";
+              	display: block;
+              	height: 0;
+              	width: 0;
+              	visibility: hidden;
+              }
+form.input button { float: right; }
+
+/* sign in */
+
+div.center-page { margin: 40px auto 100px auto;  }
+
+div.signin-page { width: 250px; }
+div.signin-page h1 { text-align: center; }
+div.signin-page input[type='text'] { width: 150px; }
+div.signin-page input[type='password'] { width: 150px; }
+div.signin-page form { margin: 0 0 30px 0; }
+div.signin-page div.help { text-align: center; }
+div.signin-page div.help a { margin-right: 20px; font-size: 0.9em; }
+
+/* register */
+
+div.register-page { width: 250px;  }
+div.register-page form div label { width: 120px; float: none; margin: 0 0 5px 0; font-size: 0.9em; }
+div.register-page form div label:after { clear: both; }
+div.register-page form div input { width: 150px;  }
+div.register-page form div input[type='text'] { width: 200px;  }
 
 /* test content */
 

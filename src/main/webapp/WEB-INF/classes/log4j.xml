@@ -28,6 +28,14 @@
     </category>
 -->
 
+        <category name="com.myapp">
+            <level value="debug"/>
+        </category>
+
+        <category name="org.springframework">
+            <level value="warn"/>
+        </category>
+
 	    <root>
 			<level value="warn"/>
 			<appender-ref ref="FileAppender"/>

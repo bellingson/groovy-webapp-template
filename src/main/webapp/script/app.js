@@ -1,34 +1,7 @@
 'use strict';
 
-/*
-var myapp = angular.module('myapp', [])	
-  .config(function($httpProvider) {
-	
-	//delete $httpProvider.defaults.headers.common['X-Requested-With'];
-		
-	}).config(function ($routeProvider) {
-		
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-	
-  });
-*/
+var myapp = angular.module('myapp',['ngRoute','ngResource']);
 
-var myapp = angular.module('myapp',[]);
-
-/*
-myapp.config(function($httpProvider) {
-	
-	//delete $httpProvider.defaults.headers.common['X-Requested-With'];
-		
-	});
-*/	
 
 myapp.config(function ($routeProvider) {
 	
@@ -37,6 +10,14 @@ $routeProvider
     templateUrl: 'views/main.html',
     controller: 'MainCtrl'
   })
+  .when('/signin', {
+      templateUrl: 'views/user/signin.html',
+      controller: 'SignInCtrl'
+    })
+   .when('/register', {
+         templateUrl: 'views/user/register.html',
+         controller: 'RegisterCtrl'
+       })
   .when('/thing/:id', {
     templateUrl: 'views/thing.html',
     controller: 'ThingCtrl'
@@ -46,3 +27,8 @@ $routeProvider
   });
 
 });
+
+myapp.factory('User',['$resource',function($resource) {
+        return $resource('/app/user/:id',
+            { id: '@id' });
+  }]);

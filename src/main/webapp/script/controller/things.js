@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 myapp.controller('MainCtrl', ['$scope','$http', function ($scope,$http) {
 
 	$http.get('app/things')
@@ -10,6 +8,7 @@ myapp.controller('MainCtrl', ['$scope','$http', function ($scope,$http) {
 		});
 		
   }]);
+
 
 myapp.controller('ThingCtrl', ['$scope','$routeParams','$http', function ($scope,$routeParams,$http) {
 
