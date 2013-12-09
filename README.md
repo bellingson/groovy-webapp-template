@@ -1,40 +1,26 @@
 groovy-webapp-template
 ======================
 
-A template for groovy web applications: groovy, spring, hibernate, angular.js
+This is a template app for testing, hacking, and learning to use current framework features.
 
-This template uses groovy and the gradle build tool.
+Frameworks used:
 
-Requirements
-1) install groovy
-2) install gradle
+* Groovy
+* AngularJS
+* Spring MVC with REST Controllers
+* JPA with Hibernate
+* SpringSecurity
+* In memory HSQL db
 
-Initialize Your App
+This app implements some basic security and user account features.
 
-1) navigate to directory where you want to create the app and clone this repo
+App initialization creates 2 user accounts (username / password):
+1) admin / admin - an admin account
+2) demo / demo - a demo user account
 
-	git clone git://github.com/benellingson/groovy-webapp-template.git
 
-2) rename groovy-webapp-template directory 
+Instructions
+-----------------------------------------------------
+1) Install Gradle
+2) run: gradle jettyRun
 
-	mv groovy-webapp-template <your-app-name>
-
-3) change to the application directory
-
-	cd <your-app-name>
-
-4) remove existing git info, so you don't try to commit back to the template
-
-	rm -rf .git
-
-5) initialize source directories
-
-	gradle initapp
-	
-6) build app
-
-	gradle war
-	
-7) run app
-
-	gradle runJetty
