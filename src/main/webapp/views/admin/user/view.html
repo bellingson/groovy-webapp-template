@@ -1,0 +1,39 @@
+
+
+
+<div class="center-page user-edit">
+
+<h1>User Update</h1>
+
+    <div ng-show="message != null" class="message">{{message}}</div>
+
+    <form class="input" method="POST" ng-submit="updateUser(user)">
+
+        <div>
+            <label>First Name</label>
+            <input type="text" name="firstName" ng-model="user.firstName" required="true"/>
+        </div>
+        <div>
+            <label>Last Name</label>
+            <input type="text" name="lastName" ng-model="user.lastName" required="true"/>
+        </div>
+
+        <div>
+            <label>Email</label>
+            <input type="text" name="email" ng-model="user.email" required="true"/>
+        </div>
+        <div>
+            <label>Password</label>
+            <input type="password" name="password" ng-model="user.password"/>
+        </div>
+        <div>
+            <label>Confirm</label>
+            <input type="password" name="confPassword" ng-model="user.confPassword"/>
+        </div>
+        <button>Update</button>
+
+    </form>
+
+
+
+</div>

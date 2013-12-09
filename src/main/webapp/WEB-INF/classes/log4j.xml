@@ -32,6 +32,19 @@
             <level value="debug"/>
         </category>
 
+        <category name="org.hibernate.sql">
+            <level value="debug"/>
+        </category>
+
+        <category name="org.hsqldb">
+            <level value="debug"/>
+        </category>
+
+        <category name="javax.persistence">
+            <level value="debug"/>
+        </category>
+
+
         <category name="org.springframework">
             <level value="warn"/>
         </category>

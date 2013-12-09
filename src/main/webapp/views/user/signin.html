@@ -2,25 +2,54 @@
 
 <div class="center-page signin-page section">
 
-<h1>Sign In</h1>
+<form ng-show="forgotPassword == null" class="input" action="/j_spring_security_check" method="POST">
 
+    <h1>Sign In</h1>
 
-<form class="input" method="POST">
+    <div ng-show="message != null" class="message">{{message}}</div>
 
     <div>
         <label for="email">Email:</label>
-        <input type="text" name="email" required="true"/>
+        <input type="text" name="j_username" required="true"/>
     </div>
     <div>
         <label for="password">Password:</label>
-        <input type="password" name="password" required="true"/>
+        <input type="password" name="j_password" required="true"/>
     </div>
-    <button>Login</button>
+
+    <div class="section">
+    <div class="remember-me section">
+        <input id="remember_me"name="_spring_security_remember_me" type="checkbox"/>
+        <label for="remember_me"class="inline">Remember me</label>
+    </div>
+    </div>
+
+
+        <button>Login</button>
 
 </form>
 
-    <div class="help">
+
+<form ng-show="forgotPassword != null" class="input" >
+
+    <h1>Recover Password</h1>
+
+    <div ng-show="message != null" class="message">{{message}}</div>
+
+    <div>
+        <label>Email:</label>
+        <input type="text" ng-model="recover.email" required="true"/>
+    </div>
+
+    <button ng-click="recoverPassword()">Recover Password</button>
+    <button ng-click="forgotPassword = null;">Cancel</button>
+
+</form>
+
+
+    <div ng-show="forgotPassword == null" class="help">
         <a href="/#/register">Register</a>
+        <a href="" ng-click="forgotPassword = true;">Forgot Password</a>
     </div>
 
 

@@ -2,52 +2,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:task="http://www.springframework.org/schema/task"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                         http://www.springframework.org/schema/beans/spring-beans.xsd
                         http://www.springframework.org/schema/mvc
-                        http://www.springframework.org/schema/mvc/spring-mvc.xsd
-                        http://www.springframework.org/schema/task
-                        http://www.springframework.org/schema/task/spring-task-3.0.xsd
-                        http://www.springframework.org/schema/context
-                        http://www.springframework.org/schema/context/spring-context.xsd">
+                        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <context:component-scan base-package="com.myapp.controllers"/>
-    <context:component-scan base-package="com.myapp.services"/>
-    <context:component-scan base-package="com.myapp.model"/>
-
-    <mvc:annotation-driven/>
-
-    <mvc:resources mapping="/resources/**" location="/resources/"/>
-
-    <task:annotation-driven/>
-
-    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-        <property name="driverClassName" value="org.hsqldb.jdbcDriver"/>
-        <property name="url" value="jdbc:hsqldb:mem:myapp;hsqldb.applog=1"/>
-        <property name="username" value="sa"/>
-        <property name="password" value=""/>
-        <property name="maxActive" value="10"/>
-        <property name="removeAbandoned" value="true"/>
-        <property name="logAbandoned" value="true"/>
-        <property name="defaultAutoCommit" value="false"/>
-    </bean>
-
-    <!--
-    <bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="dataSource" ref="dataSource"/>
-        <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
-    </bean>
-
-    <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-        <property name="database" value="HSQL"/>
-        <property name="showSql" value="true"/>
-        <property name="generateDdl" value="true"/>
-        <property name="databasePlatform" value="org.hibernate.dialect.HSQLDialect"/>
-    </bean>
-    -->
-
+<!--
     <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
         <property name="exceptionMappings">
             <props>
@@ -56,6 +16,7 @@
             </props>
         </property>
     </bean>
+-->
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>
@@ -74,6 +35,7 @@
     <bean id="openSessionViewInterceptor" class="org.springframework.orm.hibernate3.support.OpenSessionInViewInterceptor">
       <property name="sessionFactory" ref="sessionFactory" />
     </bean>
--->
+     -->
+
 
 </beans>

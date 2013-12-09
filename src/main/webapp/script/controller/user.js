@@ -2,7 +2,20 @@
 
 function SignInCtrl($scope) {
 
+    $scope.recover = {};
 
+     $scope.recoverPassword = function() {
+
+        if($scope.recover.email == null) {
+            $scope.message = "Email address is required";
+            return;
+        }
+
+        alert('Function not yet implemented: ' + $scope.recover.email);
+
+        $scope.forgotPassword = false;
+
+     }
 
 
 }
@@ -30,6 +43,11 @@ function RegisterCtrl($scope, $location, User) {
             $location.path("/login");
         },
         function(resp) {
+            console.debug(resp)
+            if(resp.data && resp.data.message)
+                $scope.message = resp.data.message;
+            else
+                $scope.message = "Server error"
         });
 
 

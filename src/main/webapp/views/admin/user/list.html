@@ -1,0 +1,37 @@
+
+<div class="center-page user-list">
+
+<h1>Users</h1>
+
+<div ng-show="message != null" class="message">{{message}}</div>
+
+<form ng-submit="deleteUsers()">
+
+<table class="itemTable">
+    <tr>
+        <th class="select"></th>
+        <th class="id">ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Roles</th>
+    </tr>
+    <tr ng-repeat="user in users">
+        <td>
+            <input type="checkbox" name="ids" ng-model="user.selected"/>
+        </td>
+        <td>{{user.id}}</td>
+        <td>
+            <a ng-href="#/view/{{user.id}}">{{user.name}}</a>
+        </td>
+        <td>
+            {{user.email}}
+        </td>
+        <td>{{user.roleNames}}</td>
+    </tr>
+</table>
+
+<button>Delete</button>
+
+</form>
+
+</div>

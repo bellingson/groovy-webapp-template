@@ -1,9 +1,16 @@
 package com.myapp.controllers
 
+import com.myapp.dao.GenericDao
+import com.myapp.dao.InputException
+import com.myapp.model.Role
 import com.myapp.model.User
+import com.myapp.service.DataService
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Controller
 import org.springframework.validation.BindingResult
+import org.springframework.validation.BindException
+import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
@@ -21,13 +28,30 @@ class UserController extends BaseController {
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody User register(@RequestBody @Valid User user, BindingResult result) {
 
-        log.debug("CREATE USER: ${user}")
+        if(result.hasErrors())
+            throw new BindException(result)
 
-        //dao.save(user)
+        if(doesUserExist(user.email))
+            throw new InputException("An account already exists for: ${user.email}")
+
+        user.name = user.firstName + ' ' + user.lastName
+
+        user.password = User.hash(user.password)
+        user.roles = []
+        user.addRole(Role.ROLE_USER)
+
+        dao.save(user)
 
         return user
+    }
+
+    Boolean doesUserExist(String email) {
+
+        User user = dao.find("from User u where u.email = :email", [email: email])
+        user ? true : false
 
     }
+
 
 
 

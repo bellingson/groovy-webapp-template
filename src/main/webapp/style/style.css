@@ -59,6 +59,8 @@ div.signin-page input[type='password'] { width: 150px; }
 div.signin-page form { margin: 0 0 30px 0; }
 div.signin-page div.help { text-align: center; }
 div.signin-page div.help a { margin-right: 20px; font-size: 0.9em; }
+div.signin-page div.remember-me { width: 160px; float: right; }
+div.signin-page div.remember-me label { display: inline; float: none; }
 
 /* register */
 
@@ -67,6 +69,20 @@ div.register-page form div label { width: 120px; float: none; margin: 0 0 5px 0;
 div.register-page form div label:after { clear: both; }
 div.register-page form div input { width: 150px;  }
 div.register-page form div input[type='text'] { width: 200px;  }
+
+div.user-list { width: 500px; }
+div.user-list table { width: 400px; border: 1px solid #999; }
+div.user-list table th.select { width: 20px;  }
+div.user-list table th.id { width: 20px;  }
+div.user-list table th { padding: 3px; background: #666; color: #FFF; text-align: left; }
+div.user-list table tr { border-bottom: 1px solid #999; }
+div.user-list table tr:nth-child(:even) { background: #F1F1F1; }
+div.user-list table td { padding: 3px; }
+
+/* user-edit */
+
+div.user-edit { width: 300px; }
+div.user-edit div input { width: 150px; }
 
 /* test content */
 

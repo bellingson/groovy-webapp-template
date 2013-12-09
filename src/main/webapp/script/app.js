@@ -18,6 +18,7 @@ $routeProvider
          templateUrl: 'views/user/register.html',
          controller: 'RegisterCtrl'
        })
+
   .when('/thing/:id', {
     templateUrl: 'views/thing.html',
     controller: 'ThingCtrl'

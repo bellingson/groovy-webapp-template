@@ -1,40 +1,26 @@
 package com.myapp.dao
 
 import com.myapp.model.EntityImpl
-import org.apache.log4j.Logger
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.stereotype.Repository
 
-import javax.persistence.EntityManager
-import javax.persistence.PersistenceContext
-import javax.transaction.Transactional
+interface GenericDao {
 
-@Repository("genericDao")
-@Transactional
-class GenericDao {
+    void save(EntityImpl entity)
 
-    final Logger log = Logger.getLogger(this.class)
-
-    @PersistenceContext
-    EntityManager em
+    List<EntityImpl> query(String query)
 
 
-    void persist(Closure c) {
+    void merge(EntityImpl entity)
 
-    }
+    EntityImpl find(String query, Map params)
 
-    EntityImpl find(Class clazz, Long id) {
-        em.find(clazz,id)
-    }
+    EntityImpl find(Class clazz, Long id)
 
-    EntityImpl save(EntityImpl entity) {
+    void remove(EntityImpl entity)
 
-        log.debug("save: ${entity.class}")
+    void remove(Collection<EntityImpl> items)
 
-        em.merge(entity)
+    void doWithTryCatch(Closure c)
 
-    }
-
-
+    void flush()
 
 }
