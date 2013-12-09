@@ -11,6 +11,7 @@ Frameworks used:
 * JPA with Hibernate
 * SpringSecurity
 * In memory HSQL db
+* Gradle
 
 This app implements some basic security and user account features.
 

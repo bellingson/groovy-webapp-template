@@ -40,6 +40,7 @@ function WidgetListCtrl($scope, Widget) {
     }
 
     $scope.showAddWidget = function() {
+        $scope.message = null;
         $scope.widget = new Widget();
     }
 
