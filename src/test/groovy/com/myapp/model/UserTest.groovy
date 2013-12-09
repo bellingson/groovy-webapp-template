@@ -2,52 +2,45 @@ package com.myapp.model
 
 import com.myapp.test.BaseTestCase
 import org.junit.Test
-import org.springframework.beans.factory.annotation.Autowired
 
-import javax.sql.DataSource
+import javax.validation.ConstraintViolationException
+
+import static org.junit.Assert.assertTrue
 
 class UserTest extends BaseTestCase {
 
-    User user
+    String testEmail = 'test@test.com'
 
-    def setup() {
-        log.debug("user spock setup")
-        user = new User(firstName: 'bob',lastName: 'jones', name: 'Bob Jones', email: 'bob@jones.com', roles: [])
-    }
+    @Test void test_save_user() {
 
-    def "creates a user"() {
+        User user = findUserByEmail(testEmail)
 
-        when:
-            user.email = 'demo'
+        assertTrue user == null
 
-        then:
-            user.email == 'demo'
+        user = new User(firstName: 'Bob', lastName: 'Smith', email: testEmail, roles: [])
 
+        dao.save(user)
 
-    }
+        dao.flush()
 
-    def "adds a role to user"() {
+        User user2 = findUserByEmail(testEmail)
 
-        log.debug("adds a role to user")
+        assertTrue user2 != null
 
-        when:
-            user.addRole(Role.ROLE_ADMIN)
-
-        then:
-            user.hasRole(Role.ROLE_ADMIN)
-
+        assertTrue user2 == user
 
     }
 
-    def "it hashes a password"() {
+    @Test(expected = ConstraintViolationException.class) void test_save_user_invalid() {
 
-        when:
-            user.password = User.hash('password')
-
-        then:
-            user.password != 'password'
+        dao.save(new User())
 
     }
+
+    User findUserByEmail(String email)  {
+        dao.find("from User u where u.email = :email",[email: email])
+    }
+
 
 
 }

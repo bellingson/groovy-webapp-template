@@ -12,7 +12,7 @@
 	        <param-name>contextConfigLocation</param-name>
 	        <param-value>
 	            classpath:applicationContext.xml
-	            /WEB-INF/applicationContext-security.xml
+	            classpath:applicationContext-security.xml
 	        </param-value>
 	    </context-param>
 

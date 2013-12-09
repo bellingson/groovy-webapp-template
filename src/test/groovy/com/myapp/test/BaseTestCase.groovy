@@ -16,8 +16,8 @@ import static org.junit.Assert.*
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations=[ "classpath:applicationContext.xml","classpath:dispatcher-servlet.xml"])
-class BaseTestCase {
+@ContextConfiguration(locations=[ "file:src/main/resources/applicationContext.xml","file:src/main/webapp/WEB-INF/dispatcher-servlet.xml"])
+abstract class BaseTestCase {
 
     static {
         BasicConfigurator.configure()

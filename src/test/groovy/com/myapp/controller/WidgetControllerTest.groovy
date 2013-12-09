@@ -1,14 +1,11 @@
 package com.myapp.controller
 
-import com.myapp.dao.GenericDao
 import com.myapp.model.Widget
 import com.myapp.test.BaseTestCase
-import com.sun.java.swing.plaf.windows.resources.windows_de
 import org.junit.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.validation.BindingResult
 import org.springframework.validation.BindException
-import spock.lang.Specification
 
 import static org.junit.Assert.assertTrue
 import static org.mockito.Mockito.*

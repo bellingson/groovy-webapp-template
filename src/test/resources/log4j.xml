@@ -40,7 +40,7 @@
 
 
         <category name="org.springframework.mvc">
-            <level value="debug"/>
+            <level value="warn"/>
         </category>
 
 	    <root>
