@@ -13,7 +13,7 @@
     </appender>
 
     <appender name="FileAppender" class="org.apache.log4j.FileAppender">
-        <param name="File" value="test.out"/>
+        <param name="File" value="log.out"/>
         <param name="Append" value="false"/>
 
         <layout class="org.apache.log4j.PatternLayout">
@@ -27,15 +27,15 @@
         </category>
 
         <category name="org.hibernate.sql">
-            <level value="debug"/>
+            <level value="warn"/>
         </category>
 
         <category name="org.hsqldb">
-            <level value="debug"/>
+            <level value="warn"/>
         </category>
 
         <category name="javax.persistence">
-            <level value="debug"/>
+            <level value="warn"/>
         </category>
 
 

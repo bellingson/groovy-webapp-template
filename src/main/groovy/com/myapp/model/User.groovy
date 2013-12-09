@@ -55,6 +55,11 @@ class User extends EntityImpl {
         return role
     }
 
+    Boolean hasRole(String name) {
+        Role r = roles.find { r -> r.name == name }
+        r != null
+    }
+
     static String hash(String string) {
         return new ShaPasswordEncoder().encodePassword(string,null)
     }
