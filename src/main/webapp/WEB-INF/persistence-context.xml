@@ -10,52 +10,29 @@
 		                   http://www.springframework.org/schema/context
 		                   http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!--<start id="bean_jpa_emf"/>-->
-    <bean id="emf" class=
-            "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+
+    <!-- // not currently implemented using PersistenceConfig groovy class -->
+
+    <bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
         <property name="packagesToScan" value="com.myapp.model"></property>
     </bean>
-    <!--<end id="bean_jpa_emf"/>-->
 
-    <!-- <start id="bean.jpa_emf_app" />
-    <bean id="emf"
-        class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
-      <property name="persistenceUnitName" value="spitterPU" />
-    </bean>
-    <end id="bean.jpa_emf_app" /> -->
 
-    <!--<start id="bean_hibernateAdapter"/>-->
-    <bean id="jpaVendorAdapter"
-          class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+    <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
         <property name="database" value="HSQL" />
         <property name="showSql" value="true"/>
         <property name="generateDdl" value="true"/>
-        <property name="databasePlatform"
-                  value="org.hibernate.dialect.HSQLDialect" />
+        <property name="databasePlatform" value="org.hibernate.dialect.HSQLDialect" />
     </bean>
-    <!--<end id="bean_hibernateAdapter"/>-->
-
-    <!--<start id="bean_exception_translation_post_processor" />-->
-    <bean class=
-                  "org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"
-            />
-    <!--<end id="bean_exception_translation_post_processor" />-->
 
 
-    <!--<start id="bean_persistenceAnnotationBeanPostProcessor"/>-->
-    <bean class=
-                  "org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
-    <!--<end id="bean_persistenceAnnotationBeanPostProcessor"/>-->
-
-    <bean id="transactionManager"
-          class="org.springframework.orm.jpa.JpaTransactionManager">
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="emf" />
     </bean>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
-    <!-- 3-show the dao class  -->
-    <context:component-scan base-package="com.myapp.model" />
+
 </beans>

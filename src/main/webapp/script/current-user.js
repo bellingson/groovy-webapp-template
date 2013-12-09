@@ -63,6 +63,8 @@ currentApp.run(function($rootScope, CurrentUser) {
 
 function SignInCtrl($scope) {
 
+    $scope.message = null;
+
     $scope.recover = {};
 
      $scope.recoverPassword = function() {

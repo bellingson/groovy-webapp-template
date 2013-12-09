@@ -2,21 +2,23 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                         http://www.springframework.org/schema/beans/spring-beans.xsd
                         http://www.springframework.org/schema/mvc
-                        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+                        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context.xsd">
 
-<!--
-    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
-        <property name="exceptionMappings">
-            <props>
-                <prop key="org.springframework.dao.DataAccessException">dataAccessFailure</prop>
-                <prop key="org.springframework.transaction.TransactionException">dataAccessFailure</prop>
-            </props>
-        </property>
-    </bean>
--->
+    <mvc:annotation-driven/>
+
+    <context:component-scan base-package="com.myapp.controller"/>
+
+    <mvc:resources location="/script/" mapping="script/**"/>
+    <mvc:resources location="/style/" mapping="style/**"/>
+    <mvc:resources location="/images/" mapping="images/**"/>
+    <mvc:resources location="/views/" mapping="views/**"/>
+
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>
@@ -30,25 +32,6 @@
         <property name="maxUploadSize" value="2165820890"/>
 
     </bean>
-
-    <mvc:resources location="/script/" mapping="script/**"/>
-    <mvc:resources location="/style/" mapping="style/**"/>
-    <mvc:resources location="/images/" mapping="images/**"/>
-    <mvc:resources location="/views/" mapping="views/**"/>
-
-    <!--
-    <mvc:resources location="/*.html" mapping="**"/>
-    -->
-
-    <!--
-    <mvc:resources location="index.html" mapping="*"/>
-    -->
-
-        <!--
-    <bean id="openSessionViewInterceptor" class="org.springframework.orm.hibernate3.support.OpenSessionInViewInterceptor">
-      <property name="sessionFactory" ref="sessionFactory" />
-    </bean>
-     -->
 
 
 </beans>

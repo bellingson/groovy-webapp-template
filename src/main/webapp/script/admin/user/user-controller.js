@@ -51,6 +51,8 @@ function UserListCtrl($scope, User) {
 
 function UserViewCtrl($scope, $routeParams, $location, User) {
 
+    $scope.message = null;
+
     var id = $routeParams['id'];
 
     $scope.user = User.get({id: id},function(user) {
