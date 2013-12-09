@@ -15,12 +15,12 @@ Frameworks used:
 This app implements some basic security and user account features.
 
 App initialization creates 2 user accounts (username / password):
-1) admin / admin - an admin account
-2) demo / demo - a demo user account
+- admin / admin - an admin account
+- demo / demo - a demo user account
 
 
 Instructions
 -----------------------------------------------------
-1) Install Gradle
-2) run: gradle jettyRun
+- Install Gradle
+- run: gradle jettyRun
 
