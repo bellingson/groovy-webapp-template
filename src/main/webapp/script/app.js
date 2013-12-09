@@ -2,6 +2,7 @@
 
 var myapp = angular.module('myapp',['ngRoute','ngResource']);
 
+var currentApp = myapp;
 
 myapp.config(function ($routeProvider) {
 	
@@ -29,7 +30,49 @@ $routeProvider
 
 });
 
-myapp.factory('User',['$resource',function($resource) {
-        return $resource('/app/user/:id',
-            { id: '@id' });
+/*
+myapp.factory('CurrentUser',['$resource',function($resource) {
+        return $resource('/user/:id/:aMethod',
+            { id: '@id', aMethod: '@aMethod' }, {
+                current: { method: 'GET', params: { aMethod: 'current' }  }
+           });
   }]);
+
+
+myapp.run(function($rootScope, CurrentUser) {
+
+    $rootScope.currentUser = null;
+    CurrentUser.current(function(user) {
+             if(user.firstName) {
+                $rootScope.currentUser = user;
+             }
+
+        },function(resp) {
+            console.debug('current user error: ' + resp);
+        });
+
+    $rootScope.isUserInRole = function(name) {
+
+        name = 'ROLE_' + name.toUpperCase();
+
+        //console.debug('role: ' + name + ' : ' + $rootScope.currentUser);
+
+        var user = $rootScope.currentUser;
+        if(user == null)
+            return false;
+
+        var inRole = false;
+        $.each(user.roles,function(i,role) {
+            if(role.name === name)
+               inRole = true;
+        });
+
+        //console.debug('user: ' + user.name + ' : ' + name + ' : ' + inRole);
+
+        return inRole;
+    }
+
+
+});
+*/
+

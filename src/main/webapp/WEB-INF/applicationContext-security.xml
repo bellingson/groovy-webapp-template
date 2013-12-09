@@ -7,10 +7,16 @@
            http://www.springframework.org/schema/security
            http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
+
+    <http pattern="/script/**" security="none"/>
+    <http pattern="/style/**" security="none"/>
+    <http pattern="/images/**" security="none"/>
+
     <http auto-config="true">
-        <form-login/>
+
+        <form-login login-page='/#/signin' default-target-url="/user/login_redirect" authentication-failure-url="/#/signin?status=fail"/>
         <http-basic/>
-        <logout/>
+        <logout logout-url="/user/signout"/>
 
         <remember-me key="userKey" token-validity-seconds="2419200"/>
 

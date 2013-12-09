@@ -15,7 +15,9 @@
         <a class="home" href="/#/">ACME Corp</a>
 
         <div class="top-links">
-            <a href="/#/signin">Login</a>
+            <a ng-show="currentUser == null" href="/#/signin">Sign In</a>
+            <a ng-show="currentUser != null" href="/user/signout">Sign Out</a>
+            <a ng-show="isUserInRole('admin')" href="/admin/user/">Admin</a>
         </div>
 
 
@@ -40,6 +42,7 @@
 
 <script src="/script/admin/user/user-app.js" type="text/javascript" charset="utf-8"></script>
 <script src="/script/admin/user/user-controller.js" type="text/javascript" charset="utf-8"></script>
+<script src="/script/current-user.js" type="text/javascript" charset="utf-8"></script>
 
 </body>
 </html>

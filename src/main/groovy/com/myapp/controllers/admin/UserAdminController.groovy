@@ -87,29 +87,41 @@ class UserAdminController extends BaseController {
     }
 
     @PostConstruct
-    void initializeAdmin() {
+    void initializeDemoUsers() {
 
         dao.doWithTryCatch {
 
-            log.debug("create admin")
+            log.debug("create test users")
 
-            User user = dao.find("from User u where u.email = :email",[email: 'admin'])
-            if(user)
-                return user
+            User admin = initializeDemoUser('admin','admin','')
 
-            user = new User(firstName: 'admin', lastName: 'admin', email: 'admin', roles:[])
-            user.password = User.hash('admin')
+            admin.addRole(Role.ROLE_ADMIN)
+            dao.save(admin)
 
-            user.addRole(Role.ROLE_ADMIN)
-            user.addRole(Role.ROLE_USER)
-
-            dao.save(user)
-
-            log.debug("CREATED ADMIN: ${user.id}")
+            User demo = initializeDemoUser('demo','demo','')
 
         }
 
     }
+
+    User initializeDemoUser(String email, String firstName, String lastName) {
+
+        User user = dao.find("from User u where u.email = :email",[email: email])
+        if(user)
+            return user
+
+        user = new User(firstName: firstName, name: firstName, lastName: lastName, email: email, roles:[])
+        user.password = User.hash(email)
+
+        user.addRole(Role.ROLE_USER)
+
+        dao.save(user)
+
+        log.debug("CREATED ADMIN: ${user.id}")
+
+        return user
+    }
+
 
 
 }

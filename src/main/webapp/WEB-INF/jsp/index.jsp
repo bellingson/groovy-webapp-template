@@ -15,8 +15,9 @@
 			<a class="home" href="/#/">ACME Corp</a>
 
             <div class="top-links">
-                <a href="/#/signin">Login</a>
-                <a href="/app/admin/user/">Admin</a>
+                <a ng-show="currentUser == null" href="/#/signin">Sign In</a>
+                <a ng-show="currentUser != null" href="/user/signout">Sign Out</a>
+                <a ng-show="isUserInRole('admin')" href="/admin/user/">Admin</a>
             </div>
 
 
@@ -34,12 +35,17 @@
 		&copy; ACME
 	</footer>
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular-route.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular-resource.min.js"></script>
-	<script src="script/app.js" type="text/javascript" charset="utf-8"></script>
-	<script src="script/controller/things.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/script/app.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/script/current-user.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/script/controller/things.js" type="text/javascript" charset="utf-8"></script>
+    <!--
 	<script src="script/controller/user.js" type="text/javascript" charset="utf-8"></script>
+	-->
+
 
 </body>	
 </html>

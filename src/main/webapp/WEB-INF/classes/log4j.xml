@@ -45,8 +45,8 @@
         </category>
 
 
-        <category name="org.springframework">
-            <level value="warn"/>
+        <category name="org.springframework.mvc">
+            <level value="debug"/>
         </category>
 
 	    <root>

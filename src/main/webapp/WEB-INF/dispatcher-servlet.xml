@@ -31,6 +31,19 @@
 
     </bean>
 
+    <mvc:resources location="/script/" mapping="script/**"/>
+    <mvc:resources location="/style/" mapping="style/**"/>
+    <mvc:resources location="/images/" mapping="images/**"/>
+    <mvc:resources location="/views/" mapping="views/**"/>
+
+    <!--
+    <mvc:resources location="/*.html" mapping="**"/>
+    -->
+
+    <!--
+    <mvc:resources location="index.html" mapping="*"/>
+    -->
+
         <!--
     <bean id="openSessionViewInterceptor" class="org.springframework.orm.hibernate3.support.OpenSessionInViewInterceptor">
       <property name="sessionFactory" ref="sessionFactory" />

@@ -2,6 +2,8 @@
 
 var userApp = angular.module('userApp',['ngRoute','ngResource']);
 
+var currentApp = userApp;
+
 userApp.config(function ($routeProvider) {
 
 $routeProvider
@@ -20,7 +22,7 @@ $routeProvider
 });
 
 userApp.factory('User',['$resource',function($resource) {
-        return $resource('/app/admin/user/:id',
+        return $resource('/admin/user/:id',
             { id: '@id' });
   }]);
 
