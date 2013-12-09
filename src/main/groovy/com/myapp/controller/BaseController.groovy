@@ -1,4 +1,4 @@
-package com.myapp.controllers
+package com.myapp.controller
 
 import com.myapp.dao.GenericDao
 import com.myapp.dao.InputException

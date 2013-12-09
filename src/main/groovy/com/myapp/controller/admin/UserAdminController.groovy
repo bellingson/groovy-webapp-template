@@ -1,6 +1,6 @@
-package com.myapp.controllers.admin
+package com.myapp.controller.admin
 
-import com.myapp.controllers.BaseController
+import com.myapp.controller.BaseController
 import com.myapp.dao.InputException
 import com.myapp.model.Role
 import com.myapp.model.User

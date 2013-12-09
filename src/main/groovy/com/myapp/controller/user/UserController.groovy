@@ -1,17 +1,13 @@
-package com.myapp.controllers
+package com.myapp.controller.user
 
-import com.myapp.dao.GenericDao
+import com.myapp.controller.BaseController
 import com.myapp.dao.InputException
 import com.myapp.model.Role
 import com.myapp.model.User
-import com.myapp.service.DataService
-import com.sun.security.auth.UserPrincipal
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Controller
 import org.springframework.validation.BindingResult
 import org.springframework.validation.BindException
-import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod

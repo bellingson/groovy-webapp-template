@@ -1,6 +1,21 @@
 'use strict';
 
 
+currentApp.config(function($routeProvider) {
+
+    $routeProvider
+        .when('/signin', {
+          templateUrl: 'views/user/signin.html',
+          controller: 'SignInCtrl'
+        })
+       .when('/register', {
+             templateUrl: 'views/user/register.html',
+             controller: 'RegisterCtrl'
+       });
+
+
+});
+
 currentApp.factory('CurrentUser',['$resource',function($resource) {
         return $resource('/user/:id/:aMethod',
             { id: '@id', aMethod: '@aMethod' }, {

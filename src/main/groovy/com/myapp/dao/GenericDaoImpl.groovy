@@ -115,6 +115,16 @@ class GenericDaoImpl implements GenericDao {
 
     }
 
+    @Transactional(propagation=Propagation.REQUIRED,readOnly = false)
+    void remove(Class clazz, Long id) {
+
+        EntityImpl entity = find(clazz, id)
+        if(entity == null)
+            throw new InputException("Item does not exist")
+
+        em.remove(entity)
+
+    }
 
 
 

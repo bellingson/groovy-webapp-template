@@ -1,0 +1,29 @@
+
+<div class="center-page w500">
+
+<h1>Edit Widget</h1>
+
+<div ng-show="message != null" class="message">{{message}}</div>
+
+<form class="input edit-widget">
+
+    <div>
+        <label>Name:</label>
+        <input type="text" ng-model="widget.name" required="true"/>
+    </div>
+    <div>
+        <label>Description:</label>
+        <input type="text" ng-model="widget.description" required="true"/>
+    </div>
+    <div>
+        <label>Image URL:</label>
+        <input type="text" ng-model="widget.imageUrl" />
+    </div>
+
+
+    <button ng-click="updateWidget(widget)">Update</button>
+
+</form>
+
+
+</div>

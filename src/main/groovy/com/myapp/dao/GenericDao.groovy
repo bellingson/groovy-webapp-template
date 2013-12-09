@@ -19,6 +19,8 @@ interface GenericDao {
 
     void remove(Collection<EntityImpl> items)
 
+    void remove(Class clazz, Long id)
+
     void doWithTryCatch(Closure c)
 
     void flush()

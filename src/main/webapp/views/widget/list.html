@@ -1,0 +1,63 @@
+
+
+<div class="center-page widgets-page">
+
+<h1>Widgets</h1>
+
+<div ng-show="message != null" class="message">{{message}}</div>
+
+<form ng-show="widget == null">
+
+<button class="create" ng-click="showAddWidget()">Add Widget</button>
+
+<table class="widget items">
+	<tr>
+        <th class="select"></th>
+		<th class="id">ID</th>
+		<th>Name</th>
+        <th class="id"></th>
+        <th>Description</th>
+	</tr>
+	<tr ng-repeat="widget in widgets">
+        <td>
+            <input type="checkbox" ng-model="widget.selected"/>
+        </td>
+		<td>{{widget.id}}</td>
+        <td><a href="/#/widget/{{widget.id}}">{{widget.name}}</a></td>
+        <td><a href="/#/widget/{{widget.id}}/view"><img src="/images/preview.gif" alt="Preview"/></a></td>
+        <td>{{widget.description}}</td>
+
+	</tr>
+	
+</table>
+
+    <button ng-click="deleteWidgets()">Delete</button>
+</form>
+
+
+<form class="input add-widget" ng-show="widget != null">
+
+    <h3>Add Widget</h3>
+
+    <div ng-show="message != null" class="message">{{message}}</div>
+
+    <div>
+        <label>Name</label>
+        <input type="text" ng-model="widget.name" required="true"/>
+    </div>
+    <div>
+        <label>Description</label>
+        <input type="text" ng-model="widget.description" required="true"/>
+    </div>
+    <div>
+        <label>Image URL</label>
+        <input type="text" ng-model="widget.imageUrl" />
+    </div>
+
+    <button ng-click="addWidget(widget)">Add Widget</button>
+
+
+
+</form>
+
+</div> <!-- widgets-page -->
