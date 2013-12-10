@@ -2,8 +2,10 @@ package com.myapp.controller.user
 
 import com.myapp.controller.BaseController
 import com.myapp.dao.InputException
+import com.myapp.dao.MyAppDao
 import com.myapp.model.Role
 import com.myapp.model.User
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Controller
 import org.springframework.validation.BindingResult
@@ -21,6 +23,8 @@ import javax.validation.Valid
 @RequestMapping("/user")
 class UserController extends BaseController {
 
+    @Autowired
+    MyAppDao data
 
     @RequestMapping(value="/login_redirect",method=RequestMethod.GET)
     String login_redirect(HttpServletRequest request) {
@@ -44,7 +48,7 @@ class UserController extends BaseController {
         if(principal == null)
             return null
 
-        return dao.find("from User u where u.email = :email",[email: principal.name])
+        return data.findUserbyEmail(principal.name)
     }
 
     @RequestMapping(value="/signout",method=RequestMethod.GET)
@@ -72,6 +76,8 @@ class UserController extends BaseController {
         if(doesUserExist(user.email))
             throw new InputException("An account already exists for: ${user.email}")
 
+        log.debug("user does not exist: ${user.email}")
+
         user.name = user.firstName + ' ' + user.lastName
 
         user.password = User.hash(user.password)
@@ -85,7 +91,7 @@ class UserController extends BaseController {
 
     Boolean doesUserExist(String email) {
 
-        User user = dao.find("from User u where u.email = :email", [email: email])
+        User user = data.findUserbyEmail(email)
         user ? true : false
 
     }

@@ -82,7 +82,7 @@ class UserAdminController extends BaseController {
 
     @RequestMapping(value="/",method = RequestMethod.GET)
     String index() {
-        log.debug("admin list view")
+        //log.debug("admin list view")
         'admin/user/index'
     }
 
