@@ -1,8 +1,8 @@
 
 
-<div class="center-page signin-page section">
+<div class="center-page signin-page cleafix">
 
-<form ng-show="forgotPassword == null" class="input" action="/j_spring_security_check" method="POST">
+<form class="signin" ng-show="forgotPassword == null" class="input" action="/j_spring_security_check" method="POST">
 
     <h1>Sign In</h1>
 
@@ -17,22 +17,24 @@
         <input type="password" name="j_password" required="true"/>
     </div>
 
-    <div class="section">
-    <div class="remember-me section">
+    <div class="clearfix">
+    <div class="remember-me clearfix">
         <input id="remember_me"name="_spring_security_remember_me" type="checkbox"/>
         <label for="remember_me"class="inline">Remember me</label>
     </div>
     </div>
 
 
-        <button>Login</button>
+        <button class="btn btn-primary">Login</button>
 
 </form>
 
 
-<form ng-show="forgotPassword != null" class="input" >
+<div ng-show="forgotPassword != null">
 
-    <h1>Recover Password</h1>
+<h1>Recover Password</h1>
+
+<form class="input forgot" >
 
     <div ng-show="message != null" class="message">{{message}}</div>
 
@@ -41,10 +43,14 @@
         <input type="text" ng-model="recover.email" required="true"/>
     </div>
 
-    <button ng-click="recoverPassword()">Recover Password</button>
-    <button ng-click="forgotPassword = null;">Cancel</button>
+    <div class="buttons">
+    <button class="btn btn-primary" ng-click="recoverPassword()">Recover Password</button>
+    <button class="btn" ng-click="forgotPassword = null;">Cancel</button>
+    </div>
 
 </form>
+
+</div>
 
 
     <div ng-show="forgotPassword == null" class="help">

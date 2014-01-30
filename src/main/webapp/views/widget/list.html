@@ -9,7 +9,7 @@
 
 <div ng-show="message != null" class="message">{{message}}</div>
 
-<button class="create" ng-click="showAddWidget()">Add Widget</button>
+<button class="create btn btn-success" ng-click="showAddWidget()">Add Widget</button>
 
 <table class="widget items">
 	<tr>
@@ -32,7 +32,7 @@
 	
 </table>
 
-    <button ng-click="deleteWidgets()">Delete</button>
+    <button class="btn btn-warning" ng-click="deleteWidgets()">Delete</button>
 </form>
 
 
@@ -55,7 +55,7 @@
         <input type="text" ng-model="widget.imageUrl" />
     </div>
 
-    <button ng-click="addWidget(widget)">Add Widget</button>
+    <button class="btn btn-primary" ng-click="addWidget(widget)">Add Widget</button>
 
 
 

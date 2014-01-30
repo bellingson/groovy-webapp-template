@@ -14,6 +14,7 @@
 
     <context:component-scan base-package="com.myapp.controller"/>
 
+    <mvc:resources location="/bootstrap/" mapping="bootstrap/**"/>
     <mvc:resources location="/script/" mapping="script/**"/>
     <mvc:resources location="/style/" mapping="style/**"/>
     <mvc:resources location="/images/" mapping="images/**"/>

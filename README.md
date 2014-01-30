@@ -8,6 +8,7 @@ Frameworks used:
 * Groovy
 * AngularJS
 * HTML 5
+* Bootstrap
 * Spring MVC with REST Controllers
 * JPA with Hibernate
 * SpringSecurity
