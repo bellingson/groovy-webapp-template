@@ -16,6 +16,7 @@
 
     <mvc:resources location="/bootstrap/" mapping="bootstrap/**"/>
     <mvc:resources location="/script/" mapping="script/**"/>
+    <mvc:resources location="/lib/" mapping="lib/**"/>
     <mvc:resources location="/style/" mapping="style/**"/>
     <mvc:resources location="/images/" mapping="images/**"/>
     <mvc:resources location="/views/" mapping="views/**"/>
