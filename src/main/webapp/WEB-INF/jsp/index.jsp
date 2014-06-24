@@ -28,12 +28,12 @@
 	      </div>	
 	</div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="/lib/js/jquery.min.js"></script>
 	<script src="/bootstrap/js/bootstrap.js"></script>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular-route.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular-resource.min.js"></script>
+	<script src="/lib/js/angular.min.js"></script>
+	<script src="/lib/js/angular-route.min.js"></script>
+	<script src="/lib/js/angular-resource.min.js"></script>
 	<script src="/script/widget/widget-app.js" type="text/javascript" charset="utf-8"></script>
     <script src="/script/widget/widget-controller.js" type="text/javascript" charset="utf-8"></script>
     <script src="/script/widget/speaker-controller.js" type="text/javascript" charset="utf-8"></script>
