@@ -36,6 +36,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular-resource.min.js"></script>
 	<script src="/script/widget/widget-app.js" type="text/javascript" charset="utf-8"></script>
     <script src="/script/widget/widget-controller.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/script/widget/speaker-controller.js" type="text/javascript" charset="utf-8"></script>
     <script src="/script/current-user.js" type="text/javascript" charset="utf-8"></script>
     <!--
 	<script src="script/controller/user.js" type="text/javascript" charset="utf-8"></script>
