@@ -20,18 +20,6 @@ $routeProvider
       templateUrl: 'views/widget/view.html',
       controller: 'WidgetCtrl'
     })
-  .when('/speaker/', {
-     templateUrl: 'views/speaker/list.html',
-     controller: 'SpeakerListCtrl'
-  })
-  .when('/speaker/:id',{
-     templateUrl: 'views/speaker/view.html',
-     controller: 'SpeakerViewCtrl'
-  })
-  .when('/speaker/:id/edit',{
-     templateUrl: 'views/speaker/edit.html',
-     controller: 'SpeakerViewCtrl'
-  })
   .otherwise({
     redirectTo: '/'
   });
