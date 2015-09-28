@@ -31,9 +31,17 @@ class UserTest extends BaseTestCase {
 
     }
 
+    // TODO - fix
     @Test(expected = ConstraintViolationException.class) void test_save_user_invalid() {
 
+        List<User> users = dao.query('from User u')
+        dao.remove(users)
+
         dao.save(new User())
+
+        users = dao.query('from User u')
+
+        log.debug(users)
 
     }
 

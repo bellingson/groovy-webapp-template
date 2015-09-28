@@ -70,6 +70,8 @@ function WidgetCtrl($scope, $routeParams, $rootScope, $location, Widget) {
     var id = $routeParams['id'];
     $scope.widget = Widget.get({ id: id });
 
+    ///$scope.widgets = Widget.query();
+
     $scope.updateWidget = function(widget) {
 
         widget.$save(function(widget) {

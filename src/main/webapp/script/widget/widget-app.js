@@ -2,6 +2,7 @@
 
 var myapp = angular.module('myapp',['ngRoute','ngResource']);
 
+
 var currentApp = myapp;
 
 myapp.config(function ($routeProvider) {
