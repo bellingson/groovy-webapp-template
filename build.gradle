@@ -1,13 +1,18 @@
 apply plugin: 'groovy'
 apply plugin: 'war'
-apply plugin: 'jetty'
+//apply plugin: 'jetty'
 apply plugin: 'idea'
+
+apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+
 
 defaultTasks 'war'
 
 //packageName = 'com.myapp'
 
-jettyRun.contextPath = '/' 
+gretty {
+    contextPath = '/'
+}
 
 def userName = System.getProperty('user.name')
 
@@ -15,7 +20,7 @@ if (version == 'unspecified') {
     version = 'test_version'
 }
 
-sourceCompatibility = 1.6
+sourceCompatibility = 1.7
 
 repositories {
 	flatDir name:'ExternalJars',dirs:'lib'
@@ -39,18 +44,19 @@ sourceSets.main.compileClasspath += configurations.provided
 
 dependencies {
 	provided group: 'org.apache.tomcat', name: 'el-api', version: '6.0.36', transitive: false
-    provided group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
-	provided group: 'jetty', name: 'javax.servlet', version: '5.1.12'
+    provided group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+	//provided group: 'jetty', name: 'javax.servlet', version: '5.1.12'
 
 }
 
-String springVersion = '4.0.0.RELEASE'
+String springVersion = '4.2.1.RELEASE'
 String springSecurityVersion = '3.2.0.RELEASE'
 
 dependencies {
 
 
-    groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.0.6'
+    //groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.0.6'
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.3.10'
 	compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
     //compile group: 'hsqldb', name: 'hsqldb', version: '1.8.1.3'
     compile group: 'org.hsqldb', name: 'hsqldb', version: '2.3.1'
@@ -94,7 +100,8 @@ dependencies {
     //testCompile group: 'hsqldb', name: 'hsqldb', version: '1.8.1.3'
     testCompile group: 'org.hsqldb', name: 'hsqldb', version: '2.3.1'
 
-	testCompile group: 'jetty', name: 'javax.servlet', version: '5.1.12'
+	//testCompile group: 'jetty', name: 'javax.servlet', version: '5.1.12'
+    testCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
 
     testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
     testCompile "org.spockframework:spock-spring:0.7-groovy-2.0"
