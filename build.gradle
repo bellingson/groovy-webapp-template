@@ -50,7 +50,8 @@ dependencies {
 }
 
 
-String springVersion = '4.2.1.RELEASE'
+//String springVersion = '4.2.1.RELEASE'
+String springVersion = '4.3.0.RELEASE'
 
 
 String springSecurityVersion = '3.2.4.RELEASE'
@@ -58,7 +59,7 @@ String springSecurityVersion = '3.2.4.RELEASE'
 
 dependencies {
 
-    compile "org.codehaus.groovy:groovy-all:2.3.10"
+    compile "org.codehaus.groovy:groovy-all:2.4.4"
 
 	compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
 
@@ -140,7 +141,7 @@ task initapp << {
 
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.7'
+    gradleVersion = '2.11'
 }
 
 
